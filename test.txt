@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    .bigbox{
+      width: 300px;
+	height: 300px;
+	margin: 0 auto;
+  background-color: #34495e;
+  color: #fff;
+      display: grid;
+grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    }
+.box{font-family: Helvetica;
+      font-weight: bold;
+      font-size: 4em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 10px solid white;
+
+    }
+</style>
+  <body>
+<h1 align=center>Suduko</h1>
+<div class="bigbox">
+  <div class="box">X</div>
+  <div class="box">O</div>
+  <div class="box">O</div>
+  <div class="box">O</div>
+  <div class="box">X</div>
+  <div class="box">O</div>
+  <div class="box">O</div>
+  <div class="box">X</div>
+  <div class="box">X</div>
+</div>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    body{
+      font-family:monospace,sans-serif;
+      font-size: 110%;
+    }
+    div{
+      background-color: #009999;
+      color:#00ffff;
+      height: 110px;
+      padding-top: 50px;
+    }
+    span {
+  font-style: italic;
+}
+    </style>
+  <body>
+    <div align = center >
+      <h1>NYP Student Wellness Programme </h1>
+      </div>
+      <p><span>all NYP students</span>are automatically enrolled into this programme upon enrollment!</p>
+      <h2> Wellness Programmes Lineup</h2>
+    <table border="1">
+    <caption>January 2021 to December 2021</caption>
+    <thead>
+    <tr>
+    <th><sub>Venue</sub></th>
+    <th>Programme</th>
+    <th>Who are invited?</th>
+    <th>Date</th>
+    </tr>
+    </thead>
+    <tr>
+    <td >Zoom</td>
+    <td>Peer Supporter Programme</td>
+    <td>All Students</td>
+    <td>20 February 2021</td>
+    </tr>
+    <td rowspan="2">P.320</td>
+    <td>Sharing by Socio-Emotional Counsellor</td>
+    <td>All Year 1 SIT Students</td>
+    <td>17 March 2021</td>
+    <tr>
+      <td>Peer Mentoring Programme by SEG Club Students</td>
+      <td>All Year 2 SEG Students</td>
+      <td rowspan="2">30 April 2021</td>
+      </tr>
+      <tr>
+        <td>L.620</td>
+        <td>Peer Mentoring Programme by SIT Club Students</td>
+        <td>All Year 2 SIT Students</td>
+        </tr>
+    <td colspan="4">Stay tuned to this page as new programmes will be added to this list!</td>
+    </table>
+    <hr><h4>Intrested in becoming a student organiser?<h4>
+      <p>You can contact us via the following methods by 18 March 2021:</p>
+      <ol type="i">
+      <li>Send us a message on Telegram</li>
+      <li>Follow NYP Student Wellness Club on Instagram</li>
+      <li>Email your request to NYP Student Wellness Club</li>
+      </ol>
+
+
+    <hr>
+    <p>NYP Student Wellness Club Copyright &#169 2021 </p>
+  </body>
+</html>
+
+
+Question2_221619Q.html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>AllTalent Enrichment Course - Enrolment Form</h1>
+      <form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" placeholder="Full Name"><br>
+
+    <label for="cars">Course to enroll in:</label>
+    <select name="cars" id="cars">
+    <option value="volvo">Ballet</option>
+    <option value="saab">Cello</option>
+
+    </select>
+    <br>
+    <label for="age">Preffered Day:</label>
+    <input type="radio" id="age1" name="age" >
+    <label for="age1">Monday</label>
+    <input type="radio" id="age2" name="age" >
+    <label for="age2">Tuesday</label><br>  <br><br>
+    <input type="reset" value="Reset Fields">
+    <input type="submit" value="Submit">
+  </form>
+  </body>
+</html>
+
+
+Question1-221619Q
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+    <h1>NYP Student Exercise Club</h1>
+<p>The NYP sudent exercise club offers <span>different types of exercise programmes </span> for like minded individuals to workout together.</p>
+    <p>Let's stay fit and tone as NYP students!</p></div>
+<table border="1">
+<caption>January to December 2021</caption>
+<thead>
+<tr>
+<th><sub>From</sub></th>
+<th>To</th>
+<th>Activity</th>
+<th>Frequency, Venue</th>
+</tr>
+</thead>
+<tr>
+<td rowspan="2">15 January 2021</td>
+<td>15 June 2021</td>
+<td><a href="https://en.wikipedia.org/wiki/Track_and_field"/>Track and Field</td>
+<td>Weekly Monday NYP Running Track</td>
+</tr>
+<td>31 August 2021</td>
+<td> Core Strengthening</td>
+<td>Everyday, NYP Gym</td>
+<tr>
+<td colspan="4">Enquiries? Call us at 65501822</td>
+</table>
+<h4>Still can't decide if you want to be part of us?</h4>
+<p> Visit the following venues in NYP everyday between 5pm-6pm to see us in action!</p>
+<ol type="I">
+<li>NYP blk F stadium</li>
+<li>NYP Swimming Pool</li>
+<li>NYP Gym</li>
+<hr>
+<p>Copyright &#169 2021 NYP Student Exercise Club</p>
+  </body>
+</html>
