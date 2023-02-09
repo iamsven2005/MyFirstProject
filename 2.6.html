@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" class="theme_switchable"><head>
+  <link rel="icon" type="image/x-icon" href="page4stuff\img\logo2.jpg">
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen"><title>POTENTIAL</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"> 
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+@import url(https://pro.fontawesome.com/releases/v5.11.2/css/all.css);
+:root {
+  --user-button-circle: rgba(0,0,0,0.025);
+  --user-button-cardborder: rgba(255,255,255,0.25);
+  --user-button-text:#323133;
+  --user-button-shadow:rgba(0,0,0,0.1);
+}
+
+body #user-button {
+  z-index: 1000;
+  bottom: 1rem !important;
+  right: 1rem !important;
+  color: var(--user-button-text);
+  transition: 1s 0s ease-out;
+  -webkit-animation: slide 3s ease-out forwards;
+          animation: slide 3s ease-out forwards;
+}
+@-webkit-keyframes slide {
+  0%, 50% {
+    opacity: 0;
+    display: block !important;
+  }
+  100% {
+    opacity: 1;
+    display: block !important;
+  }
+}
+@keyframes slide {
+  0%, 50% {
+    opacity: 0;
+    display: block !important;
+  }
+  100% {
+    opacity: 1;
+    display: block !important;
+  }
+}
+body #user-button .u-card {
+  border-radius: 100%;
+  box-shadow: 0 0 1rem -0.25rem var(--user-button-shadow), inset 0 0 1rem -0.75rem var(--user-button-shadow);
+}
+body #user-button .u-main {
+  cursor: pointer;
+  --user-button-background:var(--user-button-main, #EC87C0);
+}
+body #user-button .u-main img {
+  height: 100%;
+  width: 100%;
+}
+body #user-button .u-main iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+  opacity: 1;
+  transition: 0s 4s;
+}
+body #user-button .u-icons {
+  position: relative;
+  z-index: 950;
+  transform: translate(-50%, -50%);
+  background: var(--user-button-circle);
+  box-shadow: 0 0 0 0.125rem var(--user-button-cardborder);
+  border-radius: 100%;
+  transition: 0.25s;
+  opacity: 1 !important;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  /*&:before {
+     z-index:-1;
+     position:absolute;
+     top:0; right:0; bottom:0; left:0;
+     content:'';
+
+     backdrop-filter: blur(10px);
+  }*/
+}
+body #user-button .u-icons a {
+  color: inherit;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+}
+body #user-button .u-icons a div {
+  padding: 0.5rem;
+  transition: 0s;
+}
+body #user-button .u-icons a[href="https://twitter.com/Osorpenke"] {
+  position: relative;
+}
+body #user-button .u-icons a[href="https://twitter.com/Osorpenke"]:before {
+  content: "Middle Click";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  white-space: pre;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease-in;
+  background: #fffc;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+body #user-button .u-icons a[href="https://twitter.com/Osorpenke"].show:before {
+  opacity: 1;
+  transition: 0.25s ease-out;
+}
+body #user-button .u-icons a[href="https://twitter.com/Osorpenke"] div {
+  color: #1da1f2;
+}
+body #user-button .u-icons a[href="https://codepen.io/z-"] div {
+  background: black;
+  color: white;
+}
+body #user-button .u-icons a.u-random div {
+  position: relative;
+  top: -1px;
+  -webkit-animation: diespin 2s linear infinite;
+          animation: diespin 2s linear infinite;
+}
+@-webkit-keyframes diespin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes diespin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body #user-button .u-icons a.u-random:not(:hover) div {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+body #user-button .u-icons > * {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: var(--singlecolour);
+  border-radius: 100%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: 0.25s -0.05s;
+}
+body #user-button .u-icons > *:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body #user-button .u-icons > *:hover, body #user-button .u-icons > *:focus-within {
+  background: var(--hcolour);
+}
+body #user-button .u-icons > *:first-child:nth-last-child(1):nth-child(1), body #user-button .u-icons > *:first-child:nth-last-child(1) ~ *:nth-child(1) {
+  left: 25%;
+  top: 25%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(2):nth-child(1), body #user-button .u-icons > *:first-child:nth-last-child(2) ~ *:nth-child(1) {
+  left: 37.5%;
+  top: 18.75%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(2):nth-child(2), body #user-button .u-icons > *:first-child:nth-last-child(2) ~ *:nth-child(2) {
+  left: 18.75%;
+  top: 37.5%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(3):nth-child(1), body #user-button .u-icons > *:first-child:nth-last-child(3) ~ *:nth-child(1) {
+  left: 50%;
+  top: 15.625%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(3):nth-child(2), body #user-button .u-icons > *:first-child:nth-last-child(3) ~ *:nth-child(2) {
+  left: 25%;
+  top: 25%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(3):nth-child(3), body #user-button .u-icons > *:first-child:nth-last-child(3) ~ *:nth-child(3) {
+  left: 15.625%;
+  top: 50%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(4):nth-child(1), body #user-button .u-icons > *:first-child:nth-last-child(4) ~ *:nth-child(1) {
+  left: 62.5%;
+  top: 18.75%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(4):nth-child(2), body #user-button .u-icons > *:first-child:nth-last-child(4) ~ *:nth-child(2) {
+  left: 37.5%;
+  top: 18.75%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(4):nth-child(3), body #user-button .u-icons > *:first-child:nth-last-child(4) ~ *:nth-child(3) {
+  left: 18.75%;
+  top: 37.5%;
+}
+body #user-button .u-icons > *:first-child:nth-last-child(4):nth-child(4), body #user-button .u-icons > *:first-child:nth-last-child(4) ~ *:nth-child(4) {
+  left: 18.75%;
+  top: 62.5%;
+}
+body #user-button:hover .u-icons, body #user-button:focus-within .u-icons {
+  width: 300% !important;
+  height: 300% !important;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  transition: 0.25s;
+}
+body.dark {
+  background: #232223;
+  color: white;
+}
+@media (prefers-color-scheme: dark) {
+  body:not(.light) {
+    background: #232223;
+    color: white;
+  }
+}
+body .credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: inherit;
+}
+body .options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+}
+@media screen and (max-width: 798px) {
+  body .options {
+    min-width: 600px;
+  }
+  body .options .option:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 718px) {
+  body .options {
+    min-width: 520px;
+  }
+  body .options .option:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 638px) {
+  body .options {
+    min-width: 440px;
+  }
+  body .options .option:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 558px) {
+  body .options {
+    min-width: 360px;
+  }
+  body .options .option:nth-child(3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 478px) {
+  body .options {
+    min-width: 280px;
+  }
+  body .options .option:nth-child(2) {
+    display: none;
+  }
+}
+body .options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option:nth-child(1) {
+  --defaultBackground:#ED5565;
+}
+body .options .option:nth-child(2) {
+  --defaultBackground:#FC6E51;
+}
+body .options .option:nth-child(3) {
+  --defaultBackground:#FFCE54;
+}
+body .options .option:nth-child(4) {
+  --defaultBackground:#2ECC71;
+}
+body .options .option:nth-child(5) {
+  --defaultBackground:#5D9CEC;
+}
+body .options .option:nth-child(6) {
+  --defaultBackground:#AC92EC;
+}
+body .options .option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+  /*&:active {
+     transform:scale(0.9);
+  }*/
+}
+body .options .option.active .shadow {
+  box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+body .options .option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+body .options .option.active .label .info > div {
+  left: 0px;
+  opacity: 1;
+}
+body .options .option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+}
+body .options .option:not(.active) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+body .options .option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+body .options .option:not(.active) .label .info > div {
+  left: 20px;
+  opacity: 0;
+}
+body .options .option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option .label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: var(--defaultBackground);
+}
+body .options .option .label .info {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+body .options .option .label .info > div {
+  position: relative;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+body .options .option .label .info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+body .options .option .label .info .sub {
+  transition-delay: 0.1s;
+}
+.main{  
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+h1{
+  text-align:center;
+  text-transform: uppercase;
+  color: #F1FAEE; 
+  font-size: 4rem;
+}
+
+.roller{
+  height: 4.125rem;
+  line-height: 4rem;
+  position: relative;
+  overflow: hidden; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 5s infinite;  
+}
+
+@keyframes slide {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -4rem;    
+  }
+  50%{
+    top: -8rem;
+  }
+  72.5%{
+    top: -12.25rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  h1{
+  text-align:center;
+  text-transform: uppercase;
+  color: #F1FAEE; 
+  font-size: 2.125rem;
+}
+  .roller{
+  height: 2.6rem; 
+  line-height: 2.125rem;  
+  }
+  .roller #rolltext {  
+  animation: slide-mob 10s infinite;  
+}
+  
+  @keyframes slide-mob {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -2.125rem;    
+  }
+  50%{
+    top: -4.25rem;
+  }
+  72.5%{
+    top: -6.375rem;
+  }
+}
+}
+.nice{
+  border-radius: 2rem;
+  background-color:#ED5565;
+  color:#F1FAEE;
+  height: 2rem;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 100%; 
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+  background: #f05a30;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<div class="main">
+  <h1>YOU CAN BE: <div class="roller">
+    <span id="rolltext">BETTER<br/>
+    HEALTHY<br/>
+    STRONG<br/>
+    YOU<br>
+    </div><a class=button href="main.html">HOME</a></h1></div>
+
+<body translate="no" class="dark" data-new-gr-c-s-check-loaded="14.1065.0" data-gr-ext-installed="">
+  <div class="options">
+   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-walking"></i>
+         </div>
+         <div class="info">
+            <div class="main">NO EXCUSES</div>
+            <div class="sub">Consistent Training<br> is important,<br> have the right mindset.</div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-snowflake"></i>
+         </div>
+         <div class="info">
+            <div class="main">MAKE INABILITY<br> YOUR ABILITY</div>
+            <div class="sub">Start small, <br>then worlk<br> your way up.</div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-tree"></i>
+         </div>
+         <div class="info">
+            <div class="main">MINDSET IS EVERYTHING</div>
+            <div class="sub">Be positive, <br> stay positive</div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-tint"></i>
+         </div>
+         <div class="info">
+            <div class="main">TRY EVERYTHING</div>
+            <div class="sub">Regret nothing</div>
+         </div>
+      </div>
+   </div>
+   <div class="option active" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-sun"></i>
+         </div>
+         <div class="info">
+            <div class="main">STAY FUN</div>
+            <div class="sub">No one likes a bad attitude</div>
+         </div>
+      </div>
+   </div>
+   <div class="option active" style="--optionBackground:url(data:image/jpeg;base64,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);">
+    <div class="shadow"></div>
+    <div class="label">
+       <div class="icon">
+          <i class="fas fa-sun"></i>
+       </div>
+       <div class="info">
+          <div class="main">TAKE RESTS</div>
+          <div class="sub">No one can go forever.</div>
+       </div>
+    </div>
+ </div>
+</div>
+
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script id="rendered-js">
+$(".option").click(function () {
+  $(".option").removeClass("active");
+  $(this).addClass("active");
+
+});
+//# sourceURL=pen.js
+    </script> </body></html>

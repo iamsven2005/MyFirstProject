@@ -1,0 +1,178 @@
+aa<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<background image="C:\Users\iamsv\OneDrive\Desktop\ji\class\programming\Webtest\img_girl.jpg">
+<title>Others</title>
+<link rel="icon" type="image/x-icon" href="page4stuff\img\logo2.jpg">
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+
+body {
+	 display: relative;
+	 justify-content: center;
+	 align-items: center;
+   
+}
+ *, *:before, *:after {
+	 box-sizing: border-box;
+	 position: relative;
+}
+ .features {
+	 width: 75vw;
+	 height: 50vh;
+	 display: grid;
+	 grid-column-gap: 0.3rem;
+	 grid-row-gap: 0.3rem;
+	 grid-template-columns: repeat(3, 2fr);
+	 grid-template-rows: repeat(3, 2fr);
+}
+ .feature {
+	 --x-px: calc(var(--x) * 1px);
+	 --y-px: calc(var(--y) * 1px);
+	 --border: 2px;
+	 background: black;
+	 border-radius: 0.5rem;
+	 overflow: hidden;
+}
+ .feature:before, .feature:after {
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 100%;
+	 width: 100%;
+	 inset: 0px;
+	 border-radius: inherit;
+	 background: radial-gradient(800px circle at var(--x-px) var(--y-px), rgba(255, 255, 255, 0.3), transparent 40%);
+}
+ .feature:before {
+	 z-index: 1;
+}
+ .feature:after {
+	 opacity: 0;
+	 z-index: 2;
+	 transition: opacity 0.4s ease;
+}
+ .feature:hover:after {
+	 opacity: 1;
+}
+ .feature-content {
+	 background: red;
+	 border-radius: inherit;
+	 color: white;
+	 text-decoration: none;
+	 z-index: 1;
+	 position: absolute;
+	 inset: var(--border);
+	 display: grid;
+	 grid-template-rows: 1fr 1fr;
+	 grid-row-gap: 0.5rem;
+	 padding: 0 1rem 0 2rem;
+}
+ .feature-content > strong {
+	 align-self: self-end;
+	 font-size: 125%;
+}
+ .feature-content > span {
+	 opacity: 0.7;
+}
+p{
+  color:white;
+}
+</style>
+</head>
+<body>
+  <body style="background-image: url('img_girl.jpg');">
+    <div class="topnav" id="myTopnav" >
+      <h1><img src="logo3.jpg" alt="logo" height="70px" width="70px"></h1>
+      <a href="main.html">Home</a>
+      <a href="page1.html"><img src="1.AboutUs.svg" alt="About Us"></a>
+      <a href="page2.html"><img src="1.Articles.svg" alt="Articles"></a>
+      <a class="active" href="page3.html"><img src="1.Others.svg" alt="Others"></a>
+      <a href="page4.html"><img src="1.Resources.svg" alt="Resources"></a>
+      <a href="page5.html"><img src="1.search.svg" alt="search"></a>
+      <a href="shop.html"><img src="1.shop.svg" alt="shop"></a>
+      <a href="https://www.reddit.com/r/Cornerguys/"target="_blank"><img src = "reddit.webp" alt = "reddit" height= 30px width=30px>
+      <a href="https://www.youtube.com/channel/UCK4quKsJ-l6TwsH0blLHveg"target="_blank"><img src = "youtube logo.png" alt = "youtube" height= 30px width=30px>
+      <a href="https://www.instagram.com/corner.guys/"target="_blank"><img src = "insta-logo.png" alt = "instagram" height= 30px width=30px>
+      <a href="https://www.cornerguys05@gmail.com/"target="_blank"><p>cornerguys05@gmail.com</p>
+      <body>
+        </a>
+      </div>
+<div align="center" >
+  <h2>Games</h2><p>Distress With Esports?</p>
+<div class="features">
+  <div class="feature">
+    <a href="g.snake.html" class="feature-content">
+      <strong>Snake</strong>
+      <span>One-touch and you are dead.</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="g.dino.html" class="feature-content">
+      <strong>Dino</strong>
+      <span>Your Connection Is Still Stable For Now...</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="g.pacman.html" class="feature-content">
+      <strong>Pacman</strong>
+      <span>Full Of Jumpscares</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="g.pong.html" class="feature-content">
+      <strong>Pong</strong>
+      <span>We All Love This</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="g.tetris.html" class="feature-content">
+      <strong>Tetris</strong>
+      <span>Class Version With 1 speed</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="g.gungame.html" class="feature-content">
+      <strong>Gunner</strong>
+      <span>New Useless Game</span>
+    </a>
+  </div>
+
+    <div class="feature">
+      <a href="g.doodlejump.html" class="feature-content">
+        <strong>Jumper</strong>
+        <span>Not Good,But Just Jump</span>
+      </a>
+    </div>
+    <div class="feature">
+      <a href="g.lights.html" class="feature-content">
+        <strong>Lights</strong>
+        <span>FLICKER</span>
+      </a>
+    </div> 
+</div>
+<div align="center" >
+  <h2>Tools</h2><p>These might help</p>
+<div class="features"><div class="feature">
+  <a href="g.calculator.html" class="feature-content">
+    <strong>MATH</strong>
+    <span>I HATE MATH</span>
+  </a>
+</div>
+<div class="feature">
+  <a href="g.clock.html" class="feature-content">
+    <strong>TIME</strong>
+    <span>Its Time</span>
+  </a>
+</div>
+<div class="feature">
+  <a href="main.html" class="feature-content">
+    <strong>Home</strong>
+    <span>Go Back</span>
+  </a>
+</div> </div></div>
+</body>
+</html>

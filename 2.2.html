@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --scale: 0.1;
+  --space: 8vmin;
+  --font-primary: 'Lato', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --scale: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: hsl(0, 0%, 95%);
+  background-color: hsl(5, 15%, 5%);
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: hsl(65, 80%, 60%);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.page-title::after {
+  content: '↓';
+  display: block;
+  font-size: 2em;
+  opacity: 0;
+  transform: translateY(-24px);
+  animation: fadein 800ms 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.header,
+.footer {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.section {
+  transform-origin: center top;
+  transform: scaleY(calc(1 - var(--scale)));
+}
+
+.section > * {
+  transform-origin: center top;
+  transform: scaleY(calc(1 / (1 - var(--scale))));
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: bold;
+  line-height: 1.125;
+}
+
+.byline {
+  display: block;
+  font-size: 0.6em;
+  margin: calc(var(--space) / 1.35) 0;
+}
+
+.content {
+  position: relative;
+  margin: -50vh auto 0;
+  padding: var(--space);
+  max-width: 55ch;
+  width: calc(100% - var(--space));
+  background: hsla(5, 15%, 5%, 0.9);
+}
+
+.content > * + * {
+  margin-top: 2rem;
+}
+
+.image-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+}
+
+.image-container img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    hsla(5, 15%, 5%, 0) 0%,
+    hsla(5, 15%, 5%, 0.013) 8.1%,
+    hsla(5, 15%, 5%, 0.049) 15.5%,
+    hsla(5, 15%, 5%, 0.104) 22.5%,
+    hsla(5, 15%, 5%, 0.175) 29%,
+    hsla(5, 15%, 5%, 0.259) 35.3%,
+    hsla(5, 15%, 5%, 0.352) 41.2%,
+    hsla(5, 15%, 5%, 0.45) 47.1%,
+    hsla(5, 15%, 5%, 0.55) 52.9%,
+    hsla(5, 15%, 5%, 0.648) 58.8%,
+    hsla(5, 15%, 5%, 0.741) 64.7%,
+    hsla(5, 15%, 5%, 0.825) 71%,
+    hsla(5, 15%, 5%, 0.896) 77.5%,
+    hsla(5, 15%, 5%, 0.951) 84.5%,
+    hsla(5, 15%, 5%, 0.987) 91.9%,
+    hsl(5, 15%, 5%) 100%
+  );
+}
+
+@keyframes fadein {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  align: center;
+}
+
+.flip-card-inner {
+  position: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+.wrapper {
+  background: #000;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.portrait {
+  font-size: 10px;
+  line-height: 10px;
+  background: url('data:image/jpeg;base64,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') fixed center no-repeat;
+  background-size: contain;
+}
+
+/* This pat is important for the feature itself */
+.portrait {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,.1);
+}
+    </style>
+</head>
+<body>
+  <div class="topnav" id="myTopnav" >
+    <h1><img src="logo3.jpg" alt="logo" height="70px" width="70px"></h1>
+    <a href="main.html">Home</a>
+    <a href="page1.html"><img src="1.AboutUs.svg" alt="About Us"></a>
+    <a class="active" href="page2.html"><img src="1.Articles.svg" alt="Articles"></a>
+    <a href="page3.html"><img src="1.Others.svg" alt="Others"></a>
+    <a href="page4.html"><img src="1.Resources.svg" alt="Resources"></a>
+    <a href="page5.html"><img src="1.search.svg" alt="search"></a>
+    <a href="shop.html"><img src="1.shop.svg" alt="shop"></a>
+    <a href="https://www.reddit.com/r/Cornerguys/"target="_blank"><img src = "reddit.webp" alt = "reddit" height= 30px width=30px>
+    <a href="https://www.youtube.com/channel/UCK4quKsJ-l6TwsH0blLHveg"target="_blank"><img src = "youtube logo.png" alt = "youtube" height= 30px width=30px>
+    <a href="https://www.instagram.com/corner.guys/"target="_blank"><img src = "insta-logo.png" alt = "instagram" height= 30px width=30px>
+    <a href="https://www.cornerguys05@gmail.com/"target="_blank"><p>cornerguys05@gmail.com</p>
+    <body>
+      </a>
+    </div>
+    <header class="header">
+        <h1 class="page-title">Health Benefits</h1>
+    </header>
+    <main class="main">
+        <section class="section">
+            <figure class="image-container"><img src="https://images.unsplash.com/photo-1597487389339-5591e52de66f?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1200" alt="" /></figure>
+            <article class="content">
+                <h2 class="section-title">Why Do You Need Cardio in the First Place?</h2><span class="byline">Content provided by <a href="https://www.healthline.com/health/fitness-exercise/cardio-exercises-list#Why-Do-You-Need-Cardio-in-the-First-Place?" target="_blank" rel="noreferrer">HEALTHLINE →</a></span>
+                <p>Cardio is defined as any type of exercise that gets your heart rate up and keeps it up for a prolonged period of time. Your respiratory system will start working harder as you begin to breathe faster and more deeply. Your blood vessels will expand to bring more oxygen to your muscles, and your body will release natural painkillers (endorphins).</p>
+                <p>1.Manage your weight: The Centers for Disease Control and Prevention (CDC)Trusted Source say there’s extensive scientific evidence that 150 minutes of
+                  moderate-intensity cardio per week will help you maintain your weight over
+                  time.</p>
+                <p>2.Ward off heart disease: ResearchTrusted Source has shown that getting your
+                  heart rate up with regular cardio exercises can help prevent cardiovascular
+                  disease, which accounted for 32 percentTrusted Source of global deaths in 2012.</p>
+                <p>3.Mood improvement: It’s probably
+                  no surprise to you, but research supports the role that cardio exercise plays
+                  in improving your mood and increasing your happiness. Cardio ups the production
+                  of those feel-good painkillers called endorphins.</p>
+                <p>4.Live longer: The Mayo Clinic suggests that people who
+                  regularly perform cardio exercise will live longer.</p>
+                <p>Think outside the box and try something new with these fun cardio options. The key to sticking with any successful workout plan is discovering an activity that you enjoy.
+
+                  Once you find an exercise you love, you’ll be having so much fun that you’ll have to be reminded that you’re improving your health, too!</p>
+            </article>
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="page4stuff\img\run.png" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>EXCERSIE</h3>
+                    <p>Basic stuff like running, jumping, cycling helps.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="page4stuff\img\sports.jpg" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 >Sports</h3>
+                    <p>Sports are another form of cardio that is enjoyable to do.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <figure class="image-container"><img src="https://images.unsplash.com/photo-1597201424013-0e06a7018fbd?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1200" alt="" /></figure>
+            <article class="content">
+                <h2 class="section-title">What is Musculoskeletal Health?</h2><span class="byline">Content provided by <a href="https://medicine.iu.edu/expertise/musculoskeletal-health/what-is-musculoskeletal-health"target="blank" rel="noreferrer">INDIANA UNIVERSITY →</a></span>
+                <p>The musculoskeletal system is an essential component of human health. In addition to providing the body with structure and the means for movement, the musculoskeletal system acts as endocrine system, stimulated by exercise, interacting through biochemical signaling with other organs in the body.</p>
+                <p>Exercise, working through muscle and bone interactions, plays an important role in the maintenance of health. Lack of exercise leads to obesity and increased complications such as diabetes and metabolic disease.</p>
+                <p>As people age, they face new challenges in maintaining musculoskeletal health, as the interactions between muscle and bone are complicated by the aging process. As the population ages, the conditions of sarcopenia, osteoporosis and arthritis will increase as will hip and knee replacements.</p>
+                <p>Musculoskeletal disorders are the leading cause of disability in the US, with enormous impact on quality of life and longevity. They encompass a broad range of conditions that impair normal activity due to injury, pain or disease of the bones, joints, ligaments, muscles, and tendons. Many of these disorders are associated with, or made more complex by the aging process. IU School of Medicine has developed a comprehensive team of researchers and clinicians working to better understand the science and improve care and treatment of these disorders.</p>
+            </article>
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="page4stuff\img\stength.png" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 >Strength-Training</h3>
+                    <p>Strength training is effective due to its multi-systemic benefits. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="page4stuff\img\tendon.jpg" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 >Tendon-training</h3>
+                    <p>The interaction of muscle and tendon is of major importance for movement performance and a balanced development of muscle strength.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section class="section">
+            <figure class="image-container"><img src="https://images.unsplash.com/photo-1543408458-baf63378be13?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1200" alt="" /></figure>
+            <article class="content">
+                <h2 class="section-title">Understanding The Mind-Muscle Connection And Making It Work For You</h2><span class="byline">Content provided by <a href="https://www.youareunltd.com/2018/10/05/understanding-the-mind-muscle-connection-and-making-it-work-for-you/" target="_blank" rel="noreferrer">UNLTD →</a></span>
+                <p>As we age, our bodies and our minds change. They may get weaker, but they may get stronger in certain ways, too. Take the mind, for example: Constantly working it out by learning and challenging it through things such as puzzles, for example, keeps those synapses in tune.</p>
+                <p>And then there are your muscles, of course. They need constant tuning and challenge as you age so that you can maintain and even build strength and fitness, which helps to ward off lingering effects from things such as falls or other injuries.</p>
+                <p>However, as you age, what’s the connection between the mind and the body? Well, as it turns out, there’s a big one. The more you pay attention to the physical strength you’re trying to build, the more in tune your mind will be to what’s happening to all parts of your body, and the greater your ability to keep challenging both of them. </p>
+                <p>Simply put, the mind-muscle connection is a conscious and deliberate muscle contraction. It’s the ability to focus the tension you create during exercise on a specific muscle or region of muscles in the body, which is the difference between passively and actively moving the weight.</p>
+                <p>When you focus on using specific muscles to create contractions, the brain calls upon a greater percentage of high muscle fibers to complete the task. This also prevents innervating of muscle fibers not in use. By creating tension in the right muscles, your body is better able to gain strength and size in all the right places.</p>
+                <p>Your mind has plenty of ways to connect with your muscles during exercise. Choose one thing to focus on at a time and build this skill as you become more in tune with your body./p>
+            </article>
+            <div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="page4stuff\img\warm.jpg" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 >Warm-Up</h3>
+                    <p>Warming up helps to prevent injuries, improve neuron activation and improves exercise performance.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="page4stuff\img\eye.jpg" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 >Visualisation</h3>
+                    <p>The interaction of muscle and mind is of major importance for controlled movement.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <img src="page4stuff\img\chart.webp" alt="Avatar" style="width:100%;">
+      </main>
+    <footer class="footer"><div class="wrapper">
+      <div class="portrait">
+    I have always believed in myself, even as a young child growing up in Louisville, Ky. My parents instilled a sense of pride and confidence in me, and taught me and my brother that we could be the best at anything. I must have believed them, because I remember being the neighborhood marble champion and challenging my neighborhood buddies to see who could jump the tallest hedges or run a foot race the length of the block. Of course I knew when I made the challenge that I would win. I never even thought of losing. In high school, I boasted weekly — if not daily — that one day I was going to be the heavyweight champion of the world. As part of my boxing training, I would run down Fourth Street in downtown Louisville, darting in and out of local shops, taking just enough time to tell them I was training for the Olympics and I was going to win a gold medal. And when I came back home, I was going to turn pro and become the world heavyweight champion in boxing. I never thought of the possibility of failing — only of the fame and glory I was going to get when I won. I could see it. I could almost feel it. When I proclaimed that I was the "Greatest of All Time," I believed in myself. And I still do. Throughout my entire boxing career, my belief in my abilities triumphed over the skill of an opponent. My will was stronger than their skills. What I didn't know was that my will would be tested even more when I retired. In 1984, I was conclusively diagnosed with Parkinson's disease. Since that diagnosis, my symptoms have increased and my ability to speak in audible tones has diminished. If there was anything that would strike at the core of my confidence in myself, it would be this insidious disease. But my confidence and will to continue to live life as I choose won't be compromised. Early in 1996, I was asked to light the caldron at the Summer Olympic Games in Atlanta. Of course my immediate answer was yes. I never even thought of having Parkinson's or what physical challenges that would present for me. When the moment came for me to walk out on the 140-foot-high scaffolding and take the torch from Janet Evans, I realized I had the eyes of the world on me. I also realized that as I held the Olympic torch high above my head, my tremors had taken over. Just at that moment, I heard a rumble in the stadium that became a pounding roar and then turned into a deafening applause. I was reminded of my 1960 Olympic experience in Rome, when I won the gold medal. Those 36 years between Rome and Atlanta flashed before me, and I realized that I had come full circle. Nothing in life has defeated me. I am still the "Greatest." This I believe.
+        It is befitting that I leave the game just like I came in, beating a big bad monster who knocks out everybody and no one can whup him. That's when little Cassius Clay from Louisville, Kentucky, came up to stop Sonny Liston. The man who annihilated Floyd Patterson twice. HE WAS GONNA KILL ME! But he hit harder than George. His reach is longer than George's. He's a better boxer than George. And I'm better now than I was when you saw that 22-years old undeveloped kid running from Sonny Liston. I'm experienced now, professional. Jaws been broke, been knocked down a couple of times, I'm bad! Been chopping trees. I done something new for this fight. I done wrestled with an alligator. That's right. I have wrestled with an alligator. I done tussled with a whale. I done handcuffed lightning, thrown thunder in jail. That's bad! Only last week I murdered a rock, injured a stone, hospitalised a brick! I'm so mean I make medicine sick!
+    
+    DON KING: Bad dude!
+    
+    Bad, fast! Fast! Fast! Last night I cut the light off in my bedroom, hit the switch and was in the bed before the room was dark.
+    
+    DON KING: Incredible.
+    
+    And you George Foreman, all you chumps are going to bow when I whup him. All of ya. I knowyou've got him. I know you've got him picked. But the man's in trouble. I'm going to show you how great I am.
+    “Why should they ask me to put on a uniform and go ten thousand miles from home and drop bombs and bullets on brown people in Vietnam while so-called Negro people in Louisville are treated like dogs and denied simple human rights?
+    
+    No, I am not going ten thousand miles from home to help murder and burn another poor nation simply to continue the domination of white slave masters of the darker people the world over. This is the day when such evils must come to an end. I have been warned that to take such a stand would put my prestige in jeopardy and could cause me to lose millions of dollars which should accrue to me as the champion.
+    
+    But I have said it once and I will say it again. The real enemy of my people is right here. I will not disgrace my religion, my people or myself by becoming a tool to enslave those who are fighting for their own justice, freedom and equality…
+    
+    If I thought the war was going to bring freedom and equality to 22 million of my people they wouldn’t have to draft me, I’d join tomorrow. But I either have to obey the laws of the land or the laws of Allah. I have nothing to lose by standing up for my beliefs. So I’ll go to jail. We’ve been in jail for four hundred years.”
+    “Life is not really long,” the reigning heavyweight boxing champion said. “Let’s say the average person is 30-years-old. If you’re 30 years old, you’re not but about 7 years old. How can I prove it? Add up all the 7, 8, 9 hours you slept each night for 30 years. Last night when you went to bed and woke up this morning, you don’t remember a thing. You’ve been unconscious for about 8 years if you’re 30 years old.”
+    
+    Ali explained the various monotonies in life that pass by before one realizes their true purpose in life.
+    
+    “Add up all your traveling, all your sleeping, your school, your entertainment, you probably spent half your life doing nothing,” he said. “So now I’m 35 years old. 30 more years I’ll be 65. We don’t have no more influence, we can’t do nothin’ much at 65, your wife will tell you that.“When you’re 65, ain’t too much more to do so. Did you know I will be 65 in 30 more years? In those 30 years, I have to sleep 9 years. I don’t have 30 years of daylight. And out of my next 30 years, I might have 16 years to be productive. What am I going to do in the next 16 years, what is the best thing I can do? Get ready to meet God.”
+    
+    Ali further stated that “going into real estate, going in business, teaching boxers, that won’t get me to heaven.” Rather, selfless actions for the sake of humanity.“So what I’m gonna do when I get out of boxing? Is to get myself ready to meet God. Don’t people die everyday? It’s a scary thing to think that I’m going to hell to burn eternally forever so what am I gonna do? When I get out of boxing or when I’m through I’m gonna do all I can to help people,” said Ali.
+    
+    “He wants to know how do we treat each other, how do we help each other. So I’m going to dedicate my life to using my name and popularity to helping charities, helping people, uniting people,” he continued, adding, “We need somebody in the world to help us all make peace. So when I die, if there’s a heaven, I want to see it.”
+    
+    “The most important thing is what’s gonna happen when you die, are you going to go to heaven or hell, and that’s eternity. How long is eternity? So what am I gonna do when I’m through fighting? I only have 16 years to be productive, get myself ready to meet God and go to the best place, does that make sense?”
+        i'm going to fight not for me but to uplift my little brothers who are sleeping in concrete floors today in america black people who are living on welfare black people who can't eat
+    black people who don't know no knowledge
+    of themselves black people who don't
+    have no future everybody stop talking now attention
+    i told you all of my critics i told you
+    all that i was the greatest of all time
+    he was the greatest man i ever met to
+    say he was the greatest boxer
+    is a put down he was bigger than boxing
+    he was bigger than anything i mean if
+    you are a movie star and you went out to see mohammed ali you become a better movie star a better lawyer better doctor he was truly the greatest it used to be easy talking and saying i am the greatest campaigner for the title now i am here and everybody else is trying to take my titles oh all these fellows are trying to get my title now and it's no longer fun getting up every morning early to run and training every day it's getting to be a grind in a job but it pays off if you're in condition and 
+    if you can keep with it you have to realize what's involved and loses sometimes make it get you mad ready my mind wasn't ready for the first frasier fight all the first night the second time i got serious and did a lot better ali i'll fight you to that you have to kill him he's not gonna quit it it was really strange i thought i'd knock him out in one or two rounds but about the third round i hit him and he fell on me i thought that's it and he started screaming that all you got george show me something i have a lot of speed a lot of indoors if you stand to fight me increase your insurance mohammed ali one of my great heroes had a great line in the 70s when he's when he was asked how many sit-ups do you do he said i don't know because i start counting only when it starts burning you have a feeling of violation yes sir i'm just always happy i'm nothing and shouting because i'm used to you chunks are victory about when i whip him all over you i know you got him i know you got him but the man's in trouble i'm gonna show you how great i am have you ever been knocked out and ever dreamed of there's not a man in the world to beat me i am the greatest fighter of all time and when i hit you with a hard right hand you will fall you
+      </div>
+    </div>
+  </footer>
+</body>
+<script></script>
+</html>
+

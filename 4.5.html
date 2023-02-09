@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule Planner</title>
+<link rel="icon" type="image/x-icon" href="page4stuff\img\logo2.jpg">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<style>
+.heart {
+    width: 15rem ;
+    position: absolute ;
+    top: 35% ;
+    left: 50% ;
+    margin: -7.5rem 0 0 -7.5rem ;  
+    }
+    .heart::after    {
+        content: "" ; 
+        width: 70% ;
+        height: 3rem ;
+        background-color: rgba(0,0,0,.75) ;
+        position: absolute ;
+        bottom: -7rem ;
+        left: 10% ;
+        opacity: 1 ;
+        border-radius: 42% ;
+        animation: pulse .8s infinite ease-out .75s ;
+        -webkit-filter: blur(14px) ;
+        }
+
+.heart img {
+    width: 100% ;
+    display: block ;
+    opacity: .75 ;
+    transform-origin: 35% 30% ; 
+    animation: pulse .8s infinite ease-out .75s ;
+    }
+
+
+@keyframes pulse {
+    
+    10% , 20%    {
+        transform: scale(.9,.85) skewX(1deg) ;
+        opacity: 1 ;
+        }
+    
+}
+h2 {
+  font-size: 5em;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: transparent;
+  background: url('1.sunrise.svg') repeat-x #fff;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% 100%;
+  background-position-x: 0;
+  background-position-y: 2em;
+  -webkit-transition: background-position-y 0.6s ease;
+  transition: background-position-y 0.6s ease;
+  -webkit-animation: waveAnimation 4s infinite linear;
+  animation: waveAnimation 4s infinite linear;
+  animation-play-state: running;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+h2:hover {
+  background-position-x: 0;
+  background-position-y: 0;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+h1 {
+  font-size: 5em;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: transparent;
+  background: url('1.ocean.svg') repeat-x #fff;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% 100%;
+  background-position-x: 0;
+  background-position-y: 2em;
+  -webkit-transition: background-position-y 0.6s ease;
+  transition: background-position-y 0.6s ease;
+  -webkit-animation: waveAnimation 4s infinite linear;
+  animation: waveAnimation 4s infinite linear;
+  animation-play-state: running;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+h1:hover {
+  background-position-x: 0;
+  background-position-y: 0;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+@keyframes waveAnimation{
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 200%;
+  }
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
+
+*{
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.form{
+	background: #2A2A2A;
+	border-radius: 10px;
+	box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.2), 5px 5px 15px rgba(0, 0, 0, 0.7);
+	padding: 40px 40px 60px;
+	position: relative;
+	text-align: center;
+	width: 400px;
+}
+
+.form h2{
+	color: #F2A622;
+	font-size: 28px;
+	font-weight: 800;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+.form .form-content{
+	margin: 45px 22px;
+	text-align: left;
+}
+
+.form .form-content .form-box{
+	margin-top: 25px;
+}
+
+.form .form-content .form-box label{
+	color: #FFFFFF;
+	display: block;
+	font-size: 18px;
+	letter-spacing: 2px;
+	margin-bottom: 5px;
+}
+
+.form .form-content .form-box input{
+	background: #2A2A2A;
+	border: none;
+	border-radius: 10px;
+	box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.2), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+	color: #22F2AA;
+	font-size: 18px;
+	height: 50px;
+	outline: none;
+	padding: 5px 15px;
+	width: 100%;
+}
+
+.form .form-content .form-box input[type="submit"]{
+	box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.2), 2px 2px 6px rgba(0, 0, 0, 0.8);
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+.form .form-content .form-box input[type="submit"]:active{
+	box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.2), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+	color: #079D69;
+	margin-top: 20px;
+}
+
+.form .form-content .form-box input::placeholder{
+	color: #A2A2A2;
+	font-size: 18px;
+}
+
+.form-forget{
+	color: #A2A2A2;
+	margin-top: 30px;
+}
+
+.form-forget a{
+	color: #EF1A6B;
+}
+p{
+  color:white;
+}
+</style>
+</head>
+<body>
+  <div class="topnav" id="myTopnav" >
+    <h1><img src="logo3.jpg" alt="logo" height="70px" width="70px"></h1>
+    <a href="main.html">Home</a>
+    <a href="page1.html"><img src="1.AboutUs.svg" alt="About Us"></a>
+    <a href="page2.html"><img src="1.Articles.svg" alt="Articles"></a>
+    <a href="page3.html"><img src="1.Others.svg" alt="Others"></a>
+    <a class="active" href="page4.html"><img src="1.Resources.svg" alt="Resources"></a>
+    <a href="page5.html"><img src="1.search.svg" alt="search"></a>
+    <a href="shop.html"><img src="1.shop.svg" alt="shop"></a>
+    <a href="https://www.reddit.com/r/Cornerguys/"target="_blank"><img src = "reddit.webp" alt = "reddit" height= 30px width=30px>
+    <a href="https://www.youtube.com/channel/UCK4quKsJ-l6TwsH0blLHveg"target="_blank"><img src = "youtube logo.png" alt = "youtube" height= 30px width=30px>
+    <a href="https://www.instagram.com/corner.guys/"target="_blank"><img src = "insta-logo.png" alt = "instagram" height= 30px width=30px>
+    <a href="https://www.cornerguys05@gmail.com/"target="_blank"><p>cornerguys05@gmail.com</p>
+    <body>
+      </a>
+    </div>
+<body align=center >
+  <div background-color="black"opacity="75%">
+    
+    
+    
+    
+    
+    
+    <br>
+    
+    <div class="form">
+      <h2>Schedule Planner</h2>
+      <div class="form-content">
+        <div class="form-box">
+          <p>Exercise1 <input type="text" id="textone" /></p>
+        </div>
+        <div class="form-box">
+          <p>Exercise2<input type="text" id="textTWO" /></p>
+        </div>
+        <div class="form-box">
+          <p>Exercise3<input type="text" id="text3" /></p>
+        </div>
+        <div class="form-box">
+          <p>Exercise4<input type="text" id="text4" /></p>
+        </div>
+        <div class="form-box">
+          <p>Exercise5<input type="text" id="text5" /></p>
+        </div>
+        
+        <div class="form-box">
+          <p>Sleep time<input type="text" id="text6" /></p>
+        </div>
+        <div class="form-box">
+          <input type="submit" name="submit" value="Submit" onclick="testVariable()">
+        </div>
+      </div class="form-box"> <br></div>
+    </div>  
+  <table border="2" align=center>
+  <caption>A Weekly Plan</caption>
+  <thead>
+  <tr>
+  <th><sub>Time</sub>\<sup>Day</sup></th>
+  <th>Monday</th>
+  <th>Tuesday</th>
+  <th>Wednesday</th>
+  <th>Thurday</th>
+  <th>Friday</th>
+  <th>Saturday</th>
+  <th>Sunday</th>
+  </tr>
+  </thead>
+  <tr>
+  <th>6:00am<br>to<br>7:00am</th>
+  <td>Jogging</td>
+  <td>Cycling</td>
+  <td>Swimming</td>
+  <td>Brisk Walk</td>
+  <td>Jogging</td>
+  <td rowspan="2" colspan="2">Restday(Warmup)</td>
+  </tr>
+  <tr>
+  <th rowspan="2">8:00am<br>to<br>6:30pm</th>
+  <td colspan="5" rowspan="2">School/work Time<br>(Work Smart Not Hard)</td>
+  </tr>
+  <tr>
+  <td colspan="2">Friends Time</td>
+  </tr>
+  <tr>
+  <th>8:00pm<br>to<br>10:00pm</th>
+  <td><span id="spanResult1"></span></td>
+  <td><span id="spanResult2"></span></td>
+  <td><span id="spanResult3"></span></td>
+  <td><span id="spanResult4"></span></td>
+  <td><span id="spanResult5"></span></td> 
+  <td colspan="2">Family Time</td>
+  </tr>
+  <tr>
+    <th>10:00pm<br>to<br><span id="spanResult6"></span></th>
+    <td colspan="7" rowspan="2">Sleep<br>(Try to sleep more than 7h)</td>
+    </tr>
+  </table>
+  <table border="1" align=center>
+    <caption><h1> Or write your own</h1></caption>
+    <thead>
+    <tr>
+    <th><sub>Time</sub>\<sup>Day</sup></th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thurday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+    </tr>
+    </thead>
+    <tr>
+    <th>6:00am<br>to<br>7:00am</th>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    </tr>
+    <tr>
+    <th>8:00am<br>to<br>6:30pm</th>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    </tr>
+    <tr>
+    <th>8:00pm<br>to<br>10:00pm</th>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    <td><input type="text" name="" id=""></td>
+    </tr>
+    </table>
+<p class="box">Write your own planner in (idk, thought might help)</p>
+</body>
+</div>
+</body>
+<script>
+  var inp = document.querySelector( 'input' );
+  inp.addEventListener( 'keyup', evt => document.title = evt.target.value );
+  document.title = 'SCHDEDULE'
+
+  function testVariable() {
+            var strText = document.getElementById("textone").value;
+            var strText1 = document.getElementById("textTWO").value;
+            var strText2 = document.getElementById("text3").value;
+            var strText4 = document.getElementById("text4").value;
+            var strText5 = document.getElementById("text5").value;
+            var strText6 = document.getElementById("text6").value;
+            var result1 = strText
+            var result2 = strText1
+            var result3 = strText2
+            var result4 = strText4
+            var result5 = strText5
+            var result6 = strText6
+            document.getElementById('spanResult1').textContent = result1
+            document.getElementById('spanResult2').textContent = result2
+            document.getElementById('spanResult3').textContent = result3
+            document.getElementById('spanResult4').textContent = result4
+            document.getElementById('spanResult5').textContent = result5
+            document.getElementById('spanResult6').textContent = result6
+
+        }
+</script>
+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    
+
+  </head>
+  <body>
+      sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

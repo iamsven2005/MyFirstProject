@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Review</title>
+  <link rel="icon" type="image/x-icon" href="page4stuff\img\logo2.jpg">
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: lightblue;
+  }
+  #button {
+    width: auto;
+    height: auto;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 500%;
+    margin: 40%;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  .container image {width: 100%;height: 100%;}
+  .container {position: absolute;width: 100%;height: auto;}
+  .overlay {position: absolute;transition: all 0.3s ease;transition-delay: 0.5s;opacity: 0;background-color: white;}
+  .container:hover .overlay {opacity: 100%;}
+  .overlayRight{height: 0;width: 100%;top: 0;right: 0;background-color: lightblue;}
+  .container:hover .overlayRight{height: 100%;}
+  h2 {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: transparent;
+    background: url('1.sunrise.svg') repeat-x #fff;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position-x: 0;
+    background-position-y: 2em;
+    -webkit-transition: background-position-y 0.6s ease;
+    transition: background-position-y 0.6s ease;
+    -webkit-animation: waveAnimation 4s infinite linear;
+    animation: waveAnimation 4s infinite linear;
+    animation-play-state: running;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+  h2:hover {
+    background-position-x: 0;
+    background-position-y: 0;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+  h1 {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: transparent;
+    background: url('1.abyss.svg') repeat-x #fff;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position-x: 0;
+    background-position-y: 2em;
+    -webkit-transition: background-position-y 0.6s ease;
+    transition: background-position-y 0.6s ease;
+    -webkit-animation: waveAnimation 4s infinite linear;
+    animation: waveAnimation 4s infinite linear;
+    animation-play-state: running;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+  h1:hover {
+    background-position-x: 0;
+    background-position-y: 0;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+  @keyframes waveAnimation{
+    from {
+      background-position-x: 0%;
+    }
+    to {
+      background-position-x: 200%;
+    }
+  }
+  
+  </style>
+  </head>
+  <body>
+  <div align="center" class="container">
+    <center>
+        <div>
+          <strong class="image"><h1>HELLO</h1></strong>
+          <div class="overlay overlayRight"><b><h1><br>Welcome to <br>CORNERGUYS</h1></b><br><a id="button" href="main.html"><b>CLICK&nbsp;ME</b></a></div>
+        </div>
+        <br>
+    </center>
+  
+  
+  </div>
+  
+  
+  </body></html>

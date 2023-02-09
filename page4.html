@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Resources</title>
+<link rel="icon" type="image/x-icon" href="page4stuff\img\logo2.jpg">
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+body {
+	 display: relative;
+	 justify-content: center;
+	 align-items: center;
+   
+}
+ *, *:before, *:after {
+	 box-sizing: border-box;
+	 position: relative;
+}
+ .features {
+	 width: 75vw;
+	 height: 50vh;
+	 display: grid;
+	 grid-column-gap: 0.3rem;
+	 grid-row-gap: 0.3rem;
+	 grid-template-columns: repeat(3, 1fr);
+	 grid-template-rows: repeat(2, 1fr);
+}
+ .feature {
+	 --x-px: calc(var(--x) * 1px);
+	 --y-px: calc(var(--y) * 1px);
+	 --border: 2px;
+	 background: rgba(255, 255, 255, 0.125);
+	 border-radius: 0.5rem;
+	 overflow: hidden;
+}
+ .feature:before, .feature:after {
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 100%;
+	 width: 100%;
+	 inset: 0px;
+	 border-radius: inherit;
+	 background: radial-gradient(800px circle at var(--x-px) var(--y-px), rgba(255, 255, 255, 0.3), transparent 40%);
+}
+ .feature:before {
+	 z-index: 1;
+}
+ .feature:after {
+	 opacity: 0;
+	 z-index: 2;
+	 transition: opacity 0.4s ease;
+}
+ .feature:hover:after {
+	 opacity: 1;
+}
+ .feature-content {
+	 background: #131315;
+	 border-radius: inherit;
+	 color: white;
+	 text-decoration: none;
+	 z-index: 1;
+	 position: absolute;
+	 inset: var(--border);
+	 display: grid;
+	 grid-template-rows: 1fr 1fr;
+	 grid-row-gap: 0.5rem;
+	 padding: 0 1rem 0 2rem;
+}
+ .feature-content > strong {
+	 align-self: self-end;
+	 font-size: 125%;
+}
+ .feature-content > span {
+	 opacity: 0.7;
+}
+</style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav" >
+      <h1><img src="logo3.jpg" alt="logo" height="70px" width="70px"></h1>
+      <a href="main.html">Home</a>
+      <a href="page1.html"><img src="1.AboutUs.svg" alt="About Us"></a>
+      <a href="page2.html"><img src="1.Articles.svg" alt="Articles"></a>
+      <a href="page3.html"><img src="1.Others.svg" alt="Others"></a>
+      <a class="active" href="page4.html"><img src="1.Resources.svg" alt="Resources"></a>
+      <a href="page5.html"><img src="1.search.svg" alt="search"></a>
+      <a href="shop.html"><img src="1.shop.svg" alt="shop"></a>
+      <a href="https://www.reddit.com/r/Cornerguys/"target="_blank"><img src = "reddit.webp" alt = "reddit" height= 30px width=30px>
+      <a href="https://www.youtube.com/channel/UCK4quKsJ-l6TwsH0blLHveg"target="_blank"><img src = "youtube logo.png" alt = "youtube" height= 30px width=30px>
+      <a href="https://www.instagram.com/corner.guys/"target="_blank"><img src = "insta-logo.png" alt = "instagram" height= 30px width=30px>
+      <a href="https://www.cornerguys05@gmail.com/"target="_blank"><p>cornerguys05@gmail.com</p>
+      <body>
+        </a>
+      </div>
+<div align="center" >
+  <h2>RESOURCES</h2>
+<div class="features">
+  <div class="feature">
+    <a href="4.1.html" class="feature-content">
+      <strong>Athletes</strong>
+      <span>Discover Our Singapore Athletes</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="4.2.html" class="feature-content">
+      <strong>Memes</strong>
+      <span>Where Great Fun Lies</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="4.3.html" class="feature-content">
+      <strong>Podcast</strong>
+      <span>Join Us For Our Podcast</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="4.4.html" class="feature-content">
+      <strong>Tutorials</strong>
+      <span>Learn Something Today</span>
+    </a>
+  </div>
+  <div class="feature">
+    <a href="4.5.html" class="feature-content">
+      <strong>Planner</strong>
+      <span>Time Is Of the Essence</span>
+    </a>
+  </div>
+  
+  <div class="feature">
+    <a href="main.html" class="feature-content">
+      
+      <strong>Home</strong>
+      <span>Go Back</span>
+    </a>
+  </div>
+</div>
+</div>
+</body>
+<script>
+console.clear();
+const featuresEl = document.querySelector(".features");
+const featureEls = document.querySelectorAll(".feature");
+
+featuresEl.addEventListener("pointermove", (ev) => {
+  featureEls.forEach((featureEl) => {
+    // Not optimized yet, I know
+    const rect = featureEl.getBoundingClientRect();
+
+    featureEl.style.setProperty("--x", ev.clientX - rect.left);
+    featureEl.style.setProperty("--y", ev.clientY - rect.top);
+  });
+});
+
+</script>
+</html>

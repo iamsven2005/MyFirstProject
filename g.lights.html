@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="page4stuff\img\logo2.jpg">
+    <title>Lights</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@800&display=swap");
+
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+	background-color: #f05a30;
+	font-family: "Stick No Bills", sans-serif;
+}
+
+.flex-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	min-height: 100vh;
+}
+
+.container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0 auto;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+
+header h1 {
+	font-size: 4em;
+	text-align: center;
+	margin-top: 0.5em;
+	color: rgba(255, 255, 255, 0.651);
+}
+
+header h2 {
+	text-align: center;
+	margin-top: -0.5em;
+	font-size: 2em;
+	color: rgba(255, 255, 255, 0.651);
+}
+
+header .hidden {
+	visibility: hidden;
+}
+
+.light {
+	width: 100px;
+	height: 100px;
+	margin: 2em;
+	border-radius: 100%;
+	background: #535252;
+	cursor: pointer;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: -webkit-box-shadow 0.1s ease-in-out;
+	transition: -webkit-box-shadow 0.1s ease-in-out;
+	transition: box-shadow 0.1s ease-in-out;
+	transition: box-shadow 0.1s ease-in-out, -webkit-box-shadow 0.1s ease-in-out;
+	position: relative;
+}
+
+.light svg {
+	position: absolute;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	z-index: -2;
+}
+
+.light-on {
+	-webkit-box-shadow: 0 0 25px gold, 0 0 60px gold,
+		inset 0 20px 20px 40px #f1f1c2, inset 30px 0 35px 50px ivory;
+	box-shadow: 0 0 25px gold, 0 0 60px gold, inset 0 20px 20px 40px #f1f1c2,
+		inset 30px 0 35px 50px ivory;
+	z-index: 50;
+}
+
+.light-on:hover {
+	-webkit-animation: flicker 0.8s infinite;
+	animation: flicker 0.8s infinite;
+}
+
+@-webkit-keyframes flicker {
+	from {
+		opacity: 1;
+	}
+	4% {
+		opacity: 0.9;
+	}
+	6% {
+		opacity: 0.85;
+	}
+	8% {
+		opacity: 0.95;
+	}
+	10% {
+		opacity: 0.9;
+	}
+	11% {
+		opacity: 0.922;
+	}
+	12% {
+		opacity: 0.9;
+	}
+	14% {
+		opacity: 0.95;
+	}
+	16% {
+		opacity: 0.98;
+	}
+	17% {
+		opacity: 0.9;
+	}
+	19% {
+		opacity: 0.93;
+	}
+	20% {
+		opacity: 0.99;
+	}
+	24% {
+		opacity: 1;
+	}
+	26% {
+		opacity: 0.94;
+	}
+	28% {
+		opacity: 0.98;
+	}
+	37% {
+		opacity: 0.93;
+	}
+	38% {
+		opacity: 0.5;
+	}
+	39% {
+		opacity: 0.96;
+	}
+	42% {
+		opacity: 1;
+	}
+	44% {
+		opacity: 0.97;
+	}
+	46% {
+		opacity: 0.94;
+	}
+	56% {
+		opacity: 0.9;
+	}
+	58% {
+		opacity: 0.9;
+	}
+	60% {
+		opacity: 0.99;
+	}
+	68% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.9;
+	}
+	72% {
+		opacity: 0.95;
+	}
+	93% {
+		opacity: 0.93;
+	}
+	95% {
+		opacity: 0.95;
+	}
+	97% {
+		opacity: 0.93;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes flicker {
+	from {
+		opacity: 1;
+	}
+	4% {
+		opacity: 0.9;
+	}
+	6% {
+		opacity: 0.85;
+	}
+	8% {
+		opacity: 0.95;
+	}
+	10% {
+		opacity: 0.9;
+	}
+	11% {
+		opacity: 0.922;
+	}
+	12% {
+		opacity: 0.9;
+	}
+	14% {
+		opacity: 0.95;
+	}
+	16% {
+		opacity: 0.98;
+	}
+	17% {
+		opacity: 0.9;
+	}
+	19% {
+		opacity: 0.93;
+	}
+	20% {
+		opacity: 0.99;
+	}
+	24% {
+		opacity: 1;
+	}
+	26% {
+		opacity: 0.94;
+	}
+	28% {
+		opacity: 0.98;
+	}
+	37% {
+		opacity: 0.93;
+	}
+	38% {
+		opacity: 0.5;
+	}
+	39% {
+		opacity: 0.96;
+	}
+	42% {
+		opacity: 1;
+	}
+	44% {
+		opacity: 0.97;
+	}
+	46% {
+		opacity: 0.94;
+	}
+	56% {
+		opacity: 0.9;
+	}
+	58% {
+		opacity: 0.9;
+	}
+	60% {
+		opacity: 0.99;
+	}
+	68% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.9;
+	}
+	72% {
+		opacity: 0.95;
+	}
+	93% {
+		opacity: 0.93;
+	}
+	95% {
+		opacity: 0.95;
+	}
+	97% {
+		opacity: 0.93;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.haha {
+	color: white;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 100%; 
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+  background: #f05a30;
+}
+p {
+  text-decoration: none;
+  color: white;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.button {
+  width: 100px;
+  height: 20px;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+    </style>
+</head>
+<body>
+    <div class="flex-wrapper">
+        <header>
+            <div class="topnav" id="myTopnav">
+                <h1><img src="logo3.jpg" alt="logo" height="70px" width="70px"></h1>
+                <a href="main.html">Home</a>
+                <a href="page1.html"><img src="1.AboutUs.svg" alt="About Us"></a>
+                <a class="active" href="page2.html"><img src="1.Articles.svg" alt="Articles"></a>
+                <a href="page3.html"><img src="1.Others.svg" alt="Others"></a>
+                <a href="page4.html"><img src="1.Resources.svg" alt="Resources"></a>
+                <a href="page5.html"><img src="1.search.svg" alt="search"></a>
+                <a href="shop.html"><img src="1.shop.svg" alt="shop"></a>
+                <a href="https://www.reddit.com/r/Cornerguys/" target="_blank"><img src="reddit.webp" alt="reddit" height="30px" width="30px">
+                </a><a href="https://www.youtube.com/channel/UCK4quKsJ-l6TwsH0blLHveg" target="_blank"><img src="youtube logo.png" alt="youtube" height="30px" width="30px">
+                </a><a href="https://www.instagram.com/corner.guys/" target="_blank"><img src="insta-logo.png" alt="instagram" height="30px" width="30px">
+                </a><a href="https://www.cornerguys05@gmail.com/" target="_blank"><p>cornerguys05@gmail.com</p>
+                
+                  </a>
+                </div>
+            <h1>Kill all the lights</h1>
+			<h3>Tap a light to begin (only the right side)</h3>
+            <h2 class="end-game hidden"></h2>
+        </header>
+        <div class="container">
+        <div class="column">
+			<div class="light light-on" data-column="0" data-row="0"></div>
+			<div class="light light-off" data-column="0" data-row="1"></div>
+			<div class="light light-on" data-column="0" data-row="2"></div>
+		</div>
+		<div class="column">
+			<div class="light light-on" data-column="1" data-row="0"></div>
+			<div class="light light-on" data-column="1" data-row="1"></div>
+			<div class="light light-off" data-column="1" data-row="2"></div>
+	    </div>
+		<div class="column">
+			<div class="light light-off" data-column="2" data-row="0"></div>
+			<div class="light light-off" data-column="2" data-row="1"></div>
+			<div class="light light-off" data-column="2" data-row="2"></div>
+		</div><div class="column">
+			<div class="light light-on" data-column="3" data-row="0"></div>
+			<div class="light light-off" data-column="3" data-row="1"></div>
+			<div class="light light-on" data-column="3" data-row="2"></div>
+		</div></div></div>
+
+<script>const starting_conditions = [
+	51,
+	85,
+	102,
+	119,
+	153,
+	170,
+	187,
+	204,
+	221,
+	238,
+	287,
+	360,
+	420,
+	450,
+	497,
+	540,
+	559,
+	705,
+	754,
+	771,
+	816,
+	990,
+	1005,
+	1050,
+	1103,
+	1185,
+	1268,
+	1285,
+	1360,
+	1470,
+	1515,
+	1542,
+	1560,
+	1632,
+	1665,
+	1714,
+	1725,
+	1748,
+	1755,
+	1799,
+	1904,
+	1919,
+	1950,
+	1954,
+	1965,
+	1980,
+	1988,
+	1995,
+	2010,
+	2025,
+	2070,
+	2145,
+	2191,
+	2296,
+	2313,
+	2430,
+	2448,
+	2535,
+	2570,
+	2580,
+	2625,
+	2674,
+	2685,
+	2720,
+	2775,
+	2776,
+	2827,
+	2910,
+	2914,
+	2925,
+	2940,
+	2992,
+	3007,
+	3015,
+	3016,
+	3030,
+	3045,
+	3084,
+	3090,
+	3105,
+	3188,
+	3195,
+	3255,
+	3256,
+	3264,
+	3341,
+	3390,
+	3428,
+	3435,
+	3450,
+	3495,
+	3496,
+	3510,
+	3536,
+	3551,
+	3555,
+	3598,
+	3645,
+	3675,
+	3705,
+	3735,
+	3765,
+	3795,
+	3808,
+	3857,
+	3874,
+	3908,
+	3976,
+	4095
+]; //Added: possible starting configurations
+
+var containerDiv = document.querySelector(".container");
+window.addEventListener("load", function () {
+	let starting_condition =
+		starting_conditions[Math.floor(Math.random() * starting_conditions.length)]; //Added selecting a starting condition
+	return generateDivs(containerDiv, starting_condition);
+});
+
+//Do not change these, starting_conditions requires 4×3
+const ROWS = 4;
+const TILES_IN_ROWS = 3;
+
+let numClicks = 0;
+function handleSingleClick(e) {
+	var clickedRow = e.target.dataset.row;
+	console.log(e.target);
+	var clickedCol = e.target.dataset.column;
+	var allRowsDivs = document.querySelectorAll('[data-row="' + clickedRow + '"]');
+	var allColsDivs = document.querySelectorAll(
+		'[data-column="' + clickedCol + '"]'
+	);
+
+	allRowsDivs.forEach(function (div, i) {
+		if (div != e.target) {
+			if (!div.classList.contains("broken")) {
+				div.classList.toggle("light-on");
+			}
+		}
+	});
+	allColsDivs.forEach(function (div, i) {
+		if (div != e.target) {
+			if (!div.classList.contains("broken")) {
+				div.classList.toggle("light-on");
+			}
+		}
+	});
+
+	if (!e.target.classList.contains("broken")) {
+		e.target.classList.toggle("light-on");
+	}
+}
+
+function handleDoubleClick(e) {
+	if (
+		!e.target.classList.contains("light-on") &&
+		!e.target.classList.contains("broken")
+	) {
+		e.target.classList.add("broken");
+		console.log("doubleclick");
+		var temp = document.getElementsByTagName("template")[0];
+		var clon = temp.content.cloneNode(true);
+		e.target.appendChild(clon);
+		const rndInt = Math.floor(Math.random() * 360) + 1;
+
+		e.target.style.cssText += `transform: rotate(${rndInt}deg)`;
+	}
+}
+
+function checkForWin() {
+	var winWithoutCheating = 1;
+	var winWithCheacting = 1;
+	const allLights = document.querySelectorAll(".light");
+	allLights.forEach((item) => {
+		if (item.classList.contains("light-on")) {
+			winWithoutCheating = 0;
+			winWithCheacting = 0;
+		}
+
+		if (!item.classList.contains("light-on")) {
+			if (item.classList.contains("broken")) {
+				winWithoutCheating = 0;
+			}
+		}
+	});
+
+	const endGame = document.querySelector(".end-game");
+
+	if (winWithCheacting == 0 && winWithoutCheating == 0) {
+		endGame.classList.add("hidden");
+	} else {
+		endGame.textContent = "Congrats!";
+		endGame.classList.remove("hidden");
+	}
+}
+
+function handleClick(e) {
+	numClicks++;
+	if (numClicks === 1) {
+		singleClickTimer = setTimeout(() => {
+			numClicks = 0;
+			handleSingleClick(e);
+		}, 400);
+	} else if (numClicks === 2) {
+		clearTimeout(singleClickTimer);
+		numClicks = 0;
+		handleDoubleClick(e);
+	}
+}
+
+function generateDivs(div, starting_condition) {
+	for (var i = 0; i < ROWS; i++) {
+		var newColDiv = document.createElement("div");
+		newColDiv.classList.add("column");
+		for (var j = 0; j < TILES_IN_ROWS; j++) {
+			var newRowDiv = document.createElement("div");
+			newRowDiv.classList.add("light");
+			newRowDiv.setAttribute("data-column", "" + i);
+			newRowDiv.setAttribute("data-row", "" + j);
+			newRowDiv.addEventListener("click", handleClick);
+			let index = i + j * ROWS; //Added: getting index from x and y
+			let bool = starting_condition & (2**index); //Added: converting the number into booleans
+
+			bool
+				? newRowDiv.classList.add("light-off")
+				: newRowDiv.classList.add("light-on");
+			newColDiv.appendChild(newRowDiv);
+		}
+		div.appendChild(newColDiv);
+	}
+
+	var intervalId = window.setInterval(function () {
+		checkForWin();
+	}, 100);
+}
+</script>
+</body></html>

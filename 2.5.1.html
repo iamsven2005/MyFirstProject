@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>* {
+        box-sizing: border-box;
+    }
+    
+    body {
+        --pad: clamp(1rem, 2vw, 3rem);
+        --pad-sm: calc(var(--pad) / 2);
+        --pad-xs: calc(var(--pad) / 4);
+        margin: 0;
+        padding: var(--pad);
+        font-family: 'Exo 2', sans-serif;
+        font-size: clamp(1rem, 1rem + 0.25vw, 2rem);
+        line-height: 1.4;
+    }
+    h2,
+    blockquote,
+    p {
+        margin: 0;
+    }
+    
+    h2 {
+        font-size: clamp(2.5rem, 1rem + 4vw, 5.5rem);
+        line-height: 1.1;
+        z-index: 1;
+        font-weight: 800;
+    }
+    
+    blockquote {
+        font-size: clamp(1.2rem, 1rem + 1.5vw, 2.25rem);
+        font-weight: 800;
+        line-height: 1.1;
+        z-index: 1;
+        align-self: start;
+    }
+    
+    blockquote::before {
+        content: '“';
+        font-size: 180%;
+        line-height: 1;
+    }
+    
+    blockquote p {
+        margin-top: -1rem;
+    }
+    
+    img {
+        display: block;
+        width: 100%;
+    }
+    
+    .grid {
+        display: grid;
+        gap: var(--pad);
+        max-width: 100rem;
+        margin: 0 auto;
+    }
+    
+    .grid__img {
+        position: relative;
+        border-radius: var(--pad);
+        overflow: hidden;
+    }
+    
+    .grid__img::after {
+        content: '';
+        position: absolute;
+        background: darkorchid;
+        inset: 0;
+        opacity: 0.8;
+        mix-blend-mode: screen;
+    }
+    
+    @media (min-width: 45em) {
+        .grid {
+            grid-template-columns: 1fr repeat(10, minmax(3rem, 1fr)) 1fr;
+            grid-template-rows: 
+                minmax(3rem, auto)
+                3rem
+                auto 
+                6rem
+                auto;
+        }
+        
+        .grid::after {
+            content: '';
+            grid-column: 1 / -3;
+            grid-row: 3;
+            border-top: 0.45rem solid;
+            z-index: 1;
+        }
+        
+        h2 {
+            grid-column: 1 / span 8;
+            grid-row: 1 / span 2;
+        }
+        
+        .grid__img {
+            grid-column: 6 / -1;
+            grid-row: 2 / span 3;
+            border: 0.4rem solid darkorchid;
+        }
+        
+        blockquote {
+            grid-column: 3 / span 4;
+            grid-row: 4 / span 2;
+            background: deeppink;
+            padding: var(--pad);
+            border-radius: var(--pad);
+            border: 0.4rem solid;
+        }
+        
+        p {
+            grid-column: 7 / span 5;
+            grid-row: 5 / span 1;
+        }
+    }
+    * {
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --pad: clamp(1rem, 3vw, 3rem);
+        --pad-sm: calc(var(--pad) * 0.5);
+        --color: deeppink;
+    }
+    h3, p, blockquote, ul {
+        margin: 0;
+    }
+    
+    cite {
+        margin-top: 0.5rem;
+        display: block;
+    }
+    
+    ul {
+        padding: 0 0 0 1.5rem;
+    }
+    
+    li {
+        padding-left: 0.75rem;
+    }
+    
+    li::marker {
+        color: var(--color);
+    }
+    
+    h3 {
+        line-height: 1.1;
+        font-size: clamp(1.5vw, 1.4rem, 4rem);
+    }
+    
+    blockquote p {
+        font-size: 1.2rem;
+    }
+    
+    blockquote::before {
+        content: '“';
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 700;
+        display: block;
+        transform: scale(1.3);
+        transform-origin: top left;
+    }
+    
+    .grid2 {
+        display: grid;
+        gap: var(--pad);
+        grid-template-columns: repeat(auto-fit,
+        minmax(min(100%, 20rem), 1fr));
+        max-width: 65rem;
+        margin: 0 auto;
+    }
+    
+    .card {
+        grid-row: span 3;
+        display: grid;
+        gap: 0;
+        grid-template-rows: subgrid;
+        border: 0.4rem solid black;
+        border-radius: var(--pad-sm);
+        overflow: hidden;
+        box-shadow: 0.4rem 0.4rem 0;
+        background: lightslategray;
+    }
+    
+    .card > * {
+        padding: var(--pad-sm);
+    }
+    
+    .card__top {
+        background: var(--color);
+        color: white;
+        border-bottom: 0.4rem solid black;
+    }
+    
+    .card__center {
+        background: white;
+    }
+    
+    .card__center > * + * {
+        margin-top: 1rem;
+    }
+    
+    .card__bottom {
+        color: white;
+    }
+    
+    .card:nth-child(2) {
+        --color: darkorchid;
+    }
+    
+    .card__price {
+        font-weight: 400;
+    }
+    
+    .card__tagline {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-top: 0.3rem;
+    }
+    .day-night-label {
+        display: grid;
+        gap: 1rem;
+        place-items: center;
+      }
+      
+      .day-night-circle {
+        position: relative;
+        background: #2a3741;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+      }
+      .day-night-circle:hover {
+        background: #e9786b;
+      }
+      .sun {
+        margin-top: 20px;
+        background: #f2ef88;
+        box-shadow: 0 0 20px rgba(242, 239, 136, 0.4);
+        width: 30%;
+        height: 30%;
+        border-radius: 50%;
+        position: relative;
+        top: 70%;
+        left: 20%;
+        transition: all 0.5s ease;
+      }
+      
+      .day-night-circle:hover .sun {
+        left: 35%;
+        top: 48%;
+        transition: all 0.5s 0s ease;
+      }
+      .moon {
+        position: absolute;
+        margin-top: 20px;
+        background: #d9d8d0;
+        box-shadow: inset -10px 2px 0 0px #899098;
+        width: 22.5%;
+        height: 22.5%;
+        border-radius: 100%;
+        position: relative;
+        margin-left: -50px;
+        left: 65%;
+        top: -10%;
+        overflow: hidden;
+        transition: all 0.5s 0s ease;
+      }
+      .day-night-circle:hover .moon {
+        left: 120%;
+        top: -50%;
+      }
+      .moon div:nth-child(n) {
+        position: relative;
+        background: #b9b8b0;
+        border-radius: 50%;
+        box-shadow: inset 4px -2px 0 0px #535457;
+      }
+      .moon div:nth-child(1) {
+        top: 25%;
+        left: 12%;
+        width: 27%;
+        height: 27%;
+      }
+      .moon div:nth-child(2) {
+        top: -11%;
+        left: 60%;
+        width: 16%;
+        height: 16%;
+      }
+      .moon div:nth-child(3) {
+        top: 25%;
+        left: 44%;
+        width: 16%;
+        height: 16%;
+      }
+      .stars {
+        opacity: 1;
+        margin-left: 100px;
+        top: 0;
+        left: 0;
+        transition: all 0.4s ease;
+        z-index: 1000;
+      }
+      .day-night-circle:hover .stars {
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+      .stars div:nth-child(n) {
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        overflow: hidden;
+        width: 0.4%;
+        height: 0.4%;
+        margin-left: 20%;
+        margin-top: -20%;
+        transition: all 0.5s ease;
+      }
+      .night .stars div:nth-child(n) {
+        margin-left: 0;
+        margin-top: 0;
+        transition: all 1s 0.4s ease-out;
+      }
+      .stars div:nth-child(1) {
+        left: 25%;
+        top: 30%;
+      }
+      .stars div:nth-child(2) {
+        left: 55%;
+        top: 20%;
+      }
+      .stars div:nth-child(3) {
+        left: 60%;
+        top: 60%;
+      }
+      .stars div:nth-child(4) {
+        left: 40%;
+        top: 45%;
+      }
+      .stars div:nth-child(5) {
+        left: 15%;
+        top: 55%;
+      }
+      .stars div:nth-child(6) {
+        left: 40%;
+        top: 10%;
+      }
+      .stars div:nth-child(7) {
+        left: 80%;
+        top: 55%;
+      }
+      .water {
+        position: absolute;
+        background: #7fa1bb;
+        width: 100%;
+        height: 200px;
+        top: 68%;
+        transition: all 0.5s ease;
+      }
+      .day-night-circle:hover .water {
+        background: #71baf2;
+      }
+      .accordion {
+        position:relative;
+        left:50%;
+        transform:translate(-50%,-50%);
+        padding:25px;
+        background:#fff;
+        width:100%;
+        max-width:500px;
+        border-radius:10px;
+        box-shadow:0px 5px 10px 2px rgba(0,0,0,0.05);
+      }
+      .accordion h2 {
+        margin:10px 2px 25px;
+        font-size:18px;
+        color:#111;
+      }
+      .accordion .item {
+        margin:15px 0px;
+        border-radius:5px;
+        overflow:hidden;
+      }
+      .accordion > div:nth-child(2){
+        background:#e8eef5;
+        border-left:4px solid #21b1ea;
+      }
+      .accordion > div:nth-child(3){
+        background:#f5e8e8;
+        border-left:4px solid #ea2121;
+      }
+      .accordion > div:nth-child(4){
+        background:#efeeed;
+        border-left:4px solid #eaa421;
+      }
+      .accordion > div:nth-child(5){
+        background:#eee3ef;
+        border-left:4px solid #df21ea;
+      }
+      .accordion > div:nth-child(6){
+        background:#ffe6ff
+      ;
+        border-left:4px solid #ff66ff;
+      }
+      .accordion .item .question {
+        position:relative;
+        padding:10px 0px;
+        padding-left:40px;
+        font-size:15px;
+        font-weight:600;
+        color:#222;
+        cursor:pointer;
+      }
+      .accordion .item .question:before {
+        content:"+";
+        position:absolute;
+        top:50%;
+        left:20px;
+        transform:translate(-50%,-50%) rotate(0deg);
+        width:20px;
+        height:20px;
+        font-size:20px;
+        line-height:20px;
+        font-weight:400;
+        color:#555;
+        text-align:center;
+        transition:all 300ms ease-in-out;
+      }
+      .accordion .item .answer {
+        max-height:0px;
+        overflow:hidden;
+        font-size:15px;
+        color:#222;
+        transition:max-height 300ms linear;
+      }
+      .accordion .item .answer > * {
+        margin:5px 40px 15px;
+      }
+      .accordion .item.active .question:before {
+        transform:translate(-50%,-50%) rotate(145deg);
+      }
+      .accordion .item.active .answer {
+        max-height:500px;
+      }
+      
+</style>
+</head>
+<body>
+    <div class="grid">
+        <h2>LAND SPORTS</h2>
+        <div class="grid__img">
+            <img src='https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80' alt=''>
+        </div>
+        <blockquote>
+            <p>Lands sports is the most common form of sports.</p>
+        </blockquote>
+        <p>Land sports has the widest fanbase and greatest variety. It allows almost anyone of different backgrounds to come together, have fun and compete.</p>
+    </div>
+    
+    <div class="grid2">
+        <div class="day-night-circle">
+            <div class="sun"></div>
+            <div class="moon">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="stars">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="water"></div>
+          </div>
+        <article class="card">
+            <h3 class="card__top">Individual<span class="card__price">Push your limits.</span></h3>
+            <div class="card__center">
+                <ul>
+                    <li>Motorsports</li>
+                    <li>Shooting</li>
+                    <li>Acrobatics (bodyweight)</li>
+                    <li>Wheeled sports</li>
+                    <li>Nature related, (hunting, fishing...)</li>
+                </ul>
+            </div>
+            
+            <div class="card__bottom">
+                <blockquote>
+                    <p>The only way to prove that you’re a good sport is to lose.</p>
+                    <cite>Ernie Banks</cite>
+                </blockquote>
+            </div>
+        </article>
+
+        <article class="card">
+            <h3 class="card__top">Group<span class="card__price">Work together.</span>
+                <span class="card__tagline">Lets make some friends!</span>
+            </h3>
+            <div class="card__center">
+                <ul>
+                    <li>Ball games</li>
+                    <li>Martial arts</li>
+                    <li>Mind games</li>
+                    <li>track and field</li>
+                    <li>Fictional sports</li>
+                    <li>Catching</li>
+                </ul>
+            </div>
+            <div class="card__bottom">
+                <blockquote>
+                    <p>Age is no barrier. It’s a limitation you put on your mind.</p>
+                    <cite>Jackie Joyner-Kersee</cite>
+                </blockquote>
+            </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="accordion">
+        <h2>Sports attributes</h2>
+        <div class="item">
+          <div class="question">
+            Sportsmanship
+          </div>
+          <div class="answer">
+            <p> /ˈspɔːtsmənʃɪp/
+              noun: sportsmanship
+              fair and generous behaviour or treatment of others, especially in a sporting contest.
+              "he displayed great sportsmanship in defeat"</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Teamwork
+          </div>
+          <div class="answer">
+            <p>What does teamwork mean?
+              Working well in a team means: Working with a group of people to achieve a shared goal or outcome in an effective way. Listening to other members of the team. Taking everyone's ideas on board, not just your own.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Leadership
+          </div>
+          <div class="answer">
+            <p>Leadership, both as a research area and as a practical skill, encompasses the ability of an individual, group or organization to "lead", influence or guide other individuals, teams, or entire organizations. The word "leadership" often gets viewed as a contested term.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Support
+          </div>
+          <div class="answer">
+            <p>Last but not least, the often-overlooked dimension of sporting excellence is the people behind the scenes. Sports stars build strong relationships with those around them who have their back. This can be the emotional support from friends and family, or the deep comradery from training partners or teammates. </p>
+          </div>
+        </div>
+      </div>
+    
+ 
+    
+</body>
+<script>let accordion = document.querySelector(".accordion");
+    let accordionItems = accordion.querySelectorAll(".item");
+    
+    for(let i=0;i<accordionItems.length;i++){
+      let questionItem = accordionItems[i].querySelector(".question");
+      questionItem.addEventListener("click",function(){
+        if(accordionItems[i].classList.contains("active")){
+          accordionItems[i].classList.remove("active");
+        } else {
+          try {
+            accordion.querySelector(".active").classList.remove("active");
+          } catch(msg){}
+          accordionItems[i].classList.add("active");
+        }
+      });
+    }</script>
+</html>

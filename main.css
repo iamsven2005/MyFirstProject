@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f05a30;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: black;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  .button {
+    width: 100px;
+    height: 20px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+h2 {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: transparent;
+    background: url('1.sunrise.svg') repeat-x #fff;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position-x: 0;
+    background-position-y: 2em;
+    -webkit-transition: background-position-y 0.6s ease;
+    transition: background-position-y 0.6s ease;
+    -webkit-animation: waveAnimation 4s infinite linear;
+    animation: waveAnimation 4s infinite linear;
+    animation-play-state: running;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+  h2:hover {
+    background-position-x: 0;
+    background-position-y: 0;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+  h1 {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: transparent;
+    background: url('1.ocean.svg') repeat-x #fff;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position-x: 0;
+    background-position-y: 2em;
+    -webkit-transition: background-position-y 0.6s ease;
+    transition: background-position-y 0.6s ease;
+    -webkit-animation: waveAnimation 4s infinite linear;
+    animation: waveAnimation 4s infinite linear;
+    animation-play-state: running;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+  h1:hover {
+    background-position-x: 0;
+    background-position-y: 0;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+  @keyframes waveAnimation{
+    from {
+      background-position-x: 0%;
+    }
+    to {
+      background-position-x: 200%;
+    }
+  }
+  body::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .container image {width: 100%;height: 100%;}
+.container {position: absolute;width: 100%;height: auto;}
+.overlay {position: absolute;transition: all 0.3s ease;transition-delay: 0.5s;opacity: 0;background-color: white;}
+.container:hover .overlay {opacity: 100%;}
+.overlayRight{height: 0;width: 100%;top: 0;right: 0;background-color: lightblue;}
+.container:hover .overlayRight{height: 100%;}

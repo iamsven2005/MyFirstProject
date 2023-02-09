@@ -1,0 +1,143 @@
+Proposal (by week 7) –
+A website that acts as an interactive platform for users to play, find and interact in a healthy way.
+
+Purpose of your website
+To allow users to find fitness corner
+To allow users to play on my platform
+To allow users to find other like-minded people 
+
+Contents (with user interface design)
+Youtube videos for related content
+A chatbot that helps the user to navigate around the website
+Learning useful information regarding fitness.
+
+
+UI/UX COURSE
+https://youtu.be/B-ytMSuwbf8
+red: sports, attention, passion
+blue: trust peace intelligence, security.
+yellow:fun and bold color, energy, entertainment
+green: safety, health nature, medical, 
+orange: joy and confidence, energy and communication, use with blue
+purple: luxury, power, smooth.
+analogous: another content
+monochrome: hero
+complementary: white spaces
+readability, reduced font types(2-3),  typefaces,roles, and attributes.
+the smaller the ratio, the less the contrast. 3/4
+spacing: padding, margin,distance, 8-point sys(values multiple of 8) for consistency and communication.(8px) 12 col grid(figma)
+visual heirachy is imortant, zig zag, sysmetric, white space,match icons. Icons should be meaningful and consistent.pair with text.keep it real, use real photos.
+patterns is a solution to a common problem, alert bar(ad+ greet), header(nav+ search+ action+logo) have big search in shop/search main func, hero(quick showcase) carousell/action + images/videos,
+buttons: a fundamental element that serves as a middleman between user and service. Use different style but similar overall layout.Try to add icon, padding on top and bottom is half left right.
+ Make it visable and clickable. Make it interactive(on hover, on click)-> tip: go to codepen to search for buttons. 
+Image slideshows:An  image gallery is a way of displaying a collection of images while allowing users to see several images at once. For product/service use.
+Use of inbetween: use content that spaces out content, (animation, quotes, etc) so as to not have continuous text. tip->Checkout parallax effect.
+Footer: area positioned at the bottom of every page on the website, below content. Policy stuff, settings, db render stuff, site maps, things not for main content.
+Testimonials: establish credibility, add pictures of them for context
+Add guards to sections with viewability. Use box shadows to highlights
+Tab:a tab control is a ui element where content is separated intodifferent panels with only one panel visible at a time the hidden panels can then be accessed through user interaction tabs used for displaying large amounts of content in a relatively small area.. Highlight the opened tab with 1 style change.
+Accordions.unlike tabs accordions can display multiple panels at once and they're used for simpler content like text. (FAQ, tutorials, qn based)
+Contact form: Usually connected to db. keep your contact form simple so that your potential clients can easily get in touch as a minimum a contact form should require a name an email address and the msg.
+Responsive design: use media queries and relative sizes, keep responsiveness in mind,  send file to your phone for testing. Hence gird layout is often used.
+Prototyping: a link between screens and demonstrates how the website will function. Link prototype in figma for ui/ux diff, so others can see before dev starts.
+Look up designs like minimalist, bold, tech, neumorphism, zen...
+To make it nice, do in figma first. Reference from sites below+ similar function sites.
+
+Tutorial video coming up
+
+REFERNCE SITES
+!refer to flasktxt fr flaskmarket.db
+UI/UX
+color.adobe.com
+mycolor.space
+figma.io
+envato
+canva
+dribbble.io
+unsplash
+colors.muz.li
+webgradients.com
+fonts.adobe.com
+ionic.io
+icons.theforgesmith.com
+remove.bg
+
+FUTURE LEARNING
+html: haml, pug
+css: sass, scss
+javascript: scrypt
+react.js, springboot, angular, svelte, deno, bun, flask, rest, mysql, docker, django, bootstrap, firebase, node.js, three.js, php, mongodb, ruby on rails, graphql,edge, storybook, rust
+svelte, svelte kit, next.js,typescript, tailwindcss, daisyui, firebase, cloudfirestore, vitest, algolia, sendgrid, stripe, atome
+Svelte Kit https://kit.svelte.dev
+
+
+INSPIRATION
+codepen templates...
+legwork
+bruno-simon.com
+adeolaadeoti.netlify.app
+brittanychiang.com
+jacekjeznach.com
+ olaolu.dev
+giftegwuenu.dev
+codewonders.dev
+adhamdannaway.com
+a11ywithlindsey.com
+jhey.dev
+jenniferopal.co
+ seyi.dev
+kemiadeleke.com
+anuraghazra.github.io
+codersblock.com
+monicalent.com
+cassie.codes
+kenjimmy.me
+ lynnandtonic.com
+jason.af
+joshwcomeau.com
+meowni.ca
+nashe.dev
+ adoranwodo.com
+ danspratling.dev
+ anniebombanie.com
+robbowen.digital
+ jemimaabu.com
+michaelpumo.com
+braydoncoyer.dev
+https://iuri.is/
+https://prashantsani.com/
+https://albinotonnina.com/
+http://riccardozanutta.com/
+http://driesvanbroeck.be/
+https://vanholtz.co/
+https://danny-garcia.com
+http://www.robinpayot.com
+https://jesse-zhou.com/
+https://www.airforce.com/intothestorm/
+https://alexanderperrin.com.au/paper/...
+http://www.mentaltoy.com/resources/rd...
+https://pablotheflamingo.com
+https://patrickheng.com
+https://fingerspelling.xyz
+
+
+YOUTUBE CHANNELS
+freecodecamp
+fireship
+filip
+envato tuts
+kevinpowel
+flux academy
+
+codepen...
+bailh,michelle barker, jhey, ricardo oliva,david khourshid,hunor,krar,Ash Thornton,zed dash
+ boris sehovac, szenia, kyle wetton, aaron iker,Aysenur Turk, ben evans, brad traversy,Steve Gardner
+https://codepen.io/jipdev/pen/ZEJOWjP
+
+
+figma.stuff...
+tint:add white,hue: add black,primary, secondary, tritiary, 
+
+reasons not to use bootstrap,(personal reason). It is not clean, it is hard to customise, the code is too intensive, kinda overated ngl.
+reasons to use svg, no loss, customisable, less, data(faster),allows for animation, easily convertible, cannot be stolen(source is hard to connvert), large inspo from !cp.
+Project brief of site here: https://docs.google.com/document/d/1M66Q8j9KGuSC4rCOZg9w20qkjHoWEQr3_kvTKXnUHvk/edit?usp=sharing
